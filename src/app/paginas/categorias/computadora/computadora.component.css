@@ -19,7 +19,7 @@
   .imagen-producto {
     max-width: 100%;
     height: auto;
-    
+    flex:1;
   }
   
   .nombre {

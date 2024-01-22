@@ -16,7 +16,6 @@ export class ComputadoraComponent {
     });
   }
   filterProducts(): Producto[] {
-    console.log(this.productodata);
     return this.productodata.filter(producto => producto.categoria === 1);
   }
   agregarAlCarrito(p:Producto):void{
