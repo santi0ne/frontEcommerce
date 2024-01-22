@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductosdataService {
-  private URL: string = 'https://localhost:3000/productos';
+  private URL: string = 'http://localhost:3000/productos';
   //?format=json
   constructor(private http: HttpClient) {}
 
