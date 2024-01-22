@@ -1,0 +1,22 @@
+<mat-list role="list">
+    <mat-list-item role="listitem" routerLink="/principal">Principal</mat-list-item>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Categorías </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-selection-list [multiple]="false">
+            <mat-list role="list">
+                <mat-list-item role="listitem" routerLink="/computadoras">Computadoras de Mesa</mat-list-item>
+                <mat-list-item role="listitem" routerLink="/celulares">Celulares</mat-list-item>
+                <mat-list-item role="listitem" routerLink="/tablets">Tablets</mat-list-item>
+                <mat-list-item role="listitem" routerLink="/audio-video">Audio y Vídeo</mat-list-item>
+                <mat-list-item role="listitem" routerLink="/laptops">Laptops</mat-list-item>
+                <mat-list-item role="listitem" routerLink="/perifericos">Periféricos</mat-list-item>
+                <mat-list-item role="listitem" routerLink="/consolas">Consolas</mat-list-item>
+                <mat-list-item role="listitem" routerLink="/televisores">Televisores</mat-list-item>
+            </mat-list>
+        </mat-selection-list>
+    </mat-expansion-panel>
+    <mat-list-item role="listitem" routerLink="/factura">Factura</mat-list-item>
+    <mat-list-item role="listitem" routerLink="/acercade">Acerca de</mat-list-item>
+</mat-list>
