@@ -1,9 +1,9 @@
-<mat-card class="first-card">
+<mat-card class="card">
     <mat-card-content>
         <h1>Todos los productos</h1>
     </mat-card-content>
 </mat-card>
-<mat-card class="second-card">
+<mat-card class="card">
     <div class="productos-grid">
         <div *ngFor="let producto of productos" class="producto">
             <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="imagen-producto">

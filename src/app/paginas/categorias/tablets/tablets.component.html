@@ -1,8 +1,15 @@
-<div class="productos-grid">
-    <div *ngFor="let producto of filterProducts()" class="producto">
-        <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="imagen-producto">
-        <div class="nombre">{{ producto.nombre }}</div>
-        <div class="precio">$ {{ producto.precio }}</div>
-        <button (click)="agregarAlCarrito(producto)" class="agregar-carrito">Agregar al carrito</button>
+<mat-card class="card">
+    <mat-card-content>
+        <h1>Tablets</h1>
+    </mat-card-content>
+</mat-card>
+<mat-card class="card">
+    <div class="productos-grid">
+        <div *ngFor="let producto of filterProducts()" class="producto">
+            <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="imagen-producto">
+            <div class="nombre">{{ producto.nombre }}</div>
+            <div class="precio">$ {{ producto.precio }}</div>
+            <button (click)="agregarAlCarrito(producto)" class="agregar-carrito">Agregar al carrito</button>
+        </div>
     </div>
-</div>
+</mat-card>
