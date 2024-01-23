@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {HttpClientModule} from '@angular/common/http';
 
+import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -54,7 +55,8 @@ import { TelevisoresComponent } from './paginas/categorias/televisores/televisor
     MatSidenavModule,
     MatListModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule
   ],
   providers: [
     provideClientHydration()

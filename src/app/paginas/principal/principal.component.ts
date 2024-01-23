@@ -1,5 +1,3 @@
-import { HttpClientModule } from  '@angular/common/http';
-
 import { Producto } from '../../interfaces/producto';
 
 import { ProductosdataService } from '../../servicios/productosdata.service'
