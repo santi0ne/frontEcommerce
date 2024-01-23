@@ -1,1 +1,23 @@
-<p>acercade works!</p>
+<section class="page-section bg-light" id="team">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">Acerca de</h2>
+      <h3 class="section-subheading text-muted">Los creadores de la página</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-4" *ngFor="let creador of creadores">
+        <div class="team-member">
+          <img class="mx-auto rounded-circle" [src]="creador.imagen" style="width: 50px; height: 50px" />
+          <h4>{{ creador.nombre }}</h4>
+          <p class="text-muted">{{ creador.rol }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <p class="large text-muted">Estudiantes cursando los últimos semestres de la ESPOL. El mejor equipo de trabajo con el que puedas contar, siempre dispuestos a mejorar y aprender.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
