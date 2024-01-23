@@ -22,4 +22,6 @@ export class PrincipalComponent {
 
   agregarAlCarrito(p:Producto):void{
   }
+
+  verDetalle(p:Producto):void{}
 }

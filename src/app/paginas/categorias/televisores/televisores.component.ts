@@ -19,6 +19,7 @@ export class TelevisoresComponent {
   filterProducts(): Producto[] {
     return this.productodata.filter(producto => producto.categoria === 8);
   }
-  agregarAlCarrito(p:Producto):void{
-  }
+  agregarAlCarrito(p:Producto):void{}
+
+  verDetalle(p:Producto):void{}
 }

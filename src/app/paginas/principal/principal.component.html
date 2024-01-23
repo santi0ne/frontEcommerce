@@ -9,6 +9,7 @@
             <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="imagen-producto">
             <div class="nombre">{{ producto.nombre }}</div>
             <div class="precio">$ {{ producto.precio }}</div>
+            <button (click)="verDetalle(producto)" class="ver-detalle">Ver Detalle</button>
             <button (click)="agregarAlCarrito(producto)" class="agregar-carrito">Agregar al carrito</button>
         </div>
     </div>

@@ -18,6 +18,7 @@ export class CelularesComponent {
   filterProducts(): Producto[] {
     return this.productodata.filter(producto => producto.categoria === 2);
   }
-  agregarAlCarrito(p:Producto):void{
-  }
+  agregarAlCarrito(p:Producto):void{}
+
+  verDetalle(p:Producto):void{}
 }

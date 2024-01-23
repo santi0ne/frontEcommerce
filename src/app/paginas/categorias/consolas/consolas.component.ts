@@ -19,6 +19,7 @@ export class ConsolasComponent {
   filterProducts(): Producto[] {
     return this.productodata.filter(producto => producto.categoria === 7);
   }
-  agregarAlCarrito(p:Producto):void{
-  }
+  agregarAlCarrito(p:Producto):void{}
+
+  verDetalle(p:Producto):void{}
 }
