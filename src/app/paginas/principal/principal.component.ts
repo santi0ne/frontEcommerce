@@ -12,20 +12,20 @@ import { Component } from '@angular/core';
   styleUrl: './principal.component.css',
 })
 export class PrincipalComponent {
-  public productos : Producto[] = [];
+  public productos: Producto[] = [];
 
-  constructor(private productoProvider: ProductosdataService, private router: Router){}
+  constructor(private productoProvider: ProductosdataService, private router: Router) { }
 
   ngOnInit() {
-    this.productoProvider.getResponse().subscribe((response) => { 
-      this.productos = (response as Producto[]); 
+    this.productoProvider.getResponse().subscribe((response) => {
+      this.productos = (response as Producto[]);
     })
   }
 
-  agregarAlCarrito(p:Producto):void{
+  agregarAlCarrito(p: Producto): void {
   }
 
-  verDetalle(p:Producto):void{
+  verDetalle(p: Producto): void {
     this.router.navigate(['/detalle-p', p.pid]); // Ajusta la ruta y los parámetros según tu necesidad
   }
-  }
+}
