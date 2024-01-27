@@ -27,6 +27,7 @@ import { LaptopsComponent } from './paginas/categorias/laptops/laptops.component
 import { PerifericosComponent } from './paginas/categorias/perifericos/perifericos.component';
 import { ConsolasComponent } from './paginas/categorias/consolas/consolas.component';
 import { TelevisoresComponent } from './paginas/categorias/televisores/televisores.component';
+import { DetalleProductoComponent } from './paginas/detalle-producto/detalle-producto.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TelevisoresComponent } from './paginas/categorias/televisores/televisor
     LaptopsComponent,
     PerifericosComponent,
     ConsolasComponent,
-    TelevisoresComponent
+    TelevisoresComponent,
+    DetalleProductoComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,9 @@ import { TelevisoresComponent } from './paginas/categorias/televisores/televisor
 import { FacturaComponent } from './paginas/factura/factura.component';
 import { AcercadeComponent } from './paginas/acercade/acercade.component';
 
+import { DetalleProductoComponent } from './paginas/detalle-producto/detalle-producto.component'
+
+
 const routes: Routes = [
   { path: "principal", component: PrincipalComponent },
 
@@ -32,6 +35,9 @@ const routes: Routes = [
 
   { path: "factura", component: FacturaComponent},
   { path: "acercade", component: AcercadeComponent},
+
+  { path: 'detalle-p/:id', component: DetalleProductoComponent },
+
   { path: "", redirectTo: '/principal', pathMatch: 'full' },
   { path: "**", redirectTo: "principal" }
 ];

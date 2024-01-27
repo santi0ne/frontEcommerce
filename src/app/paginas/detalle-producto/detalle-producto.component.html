@@ -1,0 +1,15 @@
+<!-- detalle-producto.component.html -->
+<div>
+    <h2>Detalles del Producto</h2>
+    <p>Categoría: {{ producto.categoria }}</p>
+    <p>Nombre: {{ producto.nombre }}</p>
+    <p>Descripción: {{ producto.descripcion }}</p>
+    <p>Precio: {{ producto.precio | currency:'USD':'symbol':'1.2-2' }}</p>
+    <p>Imagen: <img [src]="producto.imagen" alt="Imagen del Producto"></p>
+    <p>Fecha de Creación: {{ producto.created_at | date:'medium' }}</p>
+    <p>Fecha de Actualización: {{ producto.updated_at | date:'medium' }}</p>
+    <p>ID del Producto: {{ producto.pid }}</p>
+  
+    <!--<button (click)="volver()">Volver</button>-->
+  </div>
+  
