@@ -1,0 +1,24 @@
+h1 {
+    color: #3F51B5;
+    font-weight: bold;
+}
+
+.imagen-producto {
+    max-width: 100%;
+    height: auto;
+    flex: 1;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.precio {
+    color: #007bff;
+    margin-top: 5px;
+}
+
+.buttoms {
+    display: flex;
+    justify-content: space-between;
+}
