@@ -1,6 +1,6 @@
+import { Producto } from "./producto";
+
 export interface Detalle {
-    pid: number,
+    producto: Producto,
     cantidad: number,
-    created_at: Date,
-    updated_at: Date
 }

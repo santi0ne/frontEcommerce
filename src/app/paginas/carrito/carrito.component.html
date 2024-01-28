@@ -1,1 +1,26 @@
-<p>carrito works!</p>
+<div class="productCart-wrapper">
+    <article class="productCart" *ngFor="let item of myCart$ | async">
+        <div class="productCart-body">
+            <p>{{ item.producto.nombre }}</p>
+            <div class="productCart-body-info">
+                <p>$ {{ item.producto.precio }}</p>
+                <p> {{ item.cantidad }} </p>
+            </div>
+        </div>
+        <div class="productCart-total">
+            <p>$ {{ item.producto.precio * item.cantidad }}</p>
+        </div>
+        <div class="productCart-buttons">
+            <div class="productCart-buttons-operators">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="do_not_disturb_on"></mat-icon>
+                <span> {{ item.cantidad }} </span>
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon>
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" (click)="deleteItem(item.producto.pid)"></mat-icon>
+            </div>
+        </div>
+    </article>
+    <div class="cartTotal">
+        <p class="cartTotal-total">Total: $ {{ getTotal() }}</p>
+    </div>
+    <button mat-raised-button class="pagar-btn">Pagar</button>
+</div>

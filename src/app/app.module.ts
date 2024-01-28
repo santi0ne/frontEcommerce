@@ -63,7 +63,7 @@ import { CarritoComponent } from './paginas/carrito/carrito.component';
     MatInputModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
   ],
   bootstrap: [AppComponent]
 })

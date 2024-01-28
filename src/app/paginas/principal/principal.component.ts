@@ -22,7 +22,8 @@ export class PrincipalComponent {
     })
   }
 
-  agregarAlCarrito(p: Producto): void {
+  agregarAlCarrito(p: Producto){
+    return this.productoProvider.addProduct(p);
   }
 
   verDetalle(p: Producto): void {

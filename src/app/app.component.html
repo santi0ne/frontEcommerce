@@ -16,9 +16,9 @@
         aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>Carrito</button>
   </div>
 </mat-toolbar>
-<div class="cart" [ngClass]="{show:viewCarrito}">
+<mat-card class="cart" [ngClass]="{show:viewCarrito}">
   <app-carrito></app-carrito>
-</div>
+</mat-card>
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="side" opened="true">
     <ng-container *ngIf="sidenav.opened">
