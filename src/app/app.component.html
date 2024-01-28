@@ -10,7 +10,7 @@
   </div>
   <div class="navbar-cart">
     <div class="navbar-cart-items">
-      <p>0</p>
+      <p>{{ (myCart$ | async)?.length }}</p>
     </div>
     <button mat-raised-button color="accent" (click)="onToggleCarrito()"><mat-icon aria-hidden="false"
         aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>Carrito</button>

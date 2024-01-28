@@ -2,7 +2,6 @@ import { Router } from '@angular/router'
 import { Component } from '@angular/core';
 import { ProductosdataService } from '../../../servicios/productosdata.service';
 import { Producto } from '../../../interfaces/producto';
-import { pid } from 'process';
 
 @Component({
   selector: 'app-laptops',
@@ -24,7 +23,9 @@ export class LaptopsComponent {
     return this.productodata.filter(producto => producto.categoria === 5);
   }
 
-  agregarAlCarrito(p: Producto): void { }
+  agregarAlCarrito(p: Producto): void {
+    return this.datap.addProduct(p);
+  }
 
   verDetalle(p: Producto): void {
     this.router.navigate(['/detalle-p', p.pid]);

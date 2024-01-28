@@ -1,3 +1,17 @@
+h1 {
+  color: #3F51B5;
+  font-weight: bold;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.header-elements {
+  display: flex;
+  justify-content: space-between;
+}
+
 .productos-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -23,7 +23,9 @@ export class PerifericosComponent {
     return this.productodata.filter(producto => producto.categoria === 6);
   }
 
-  agregarAlCarrito(p: Producto): void { }
+  agregarAlCarrito(p: Producto): void {
+    return this.datap.addProduct(p);
+  }
 
   verDetalle(p: Producto): void {
     this.router.navigate(['/detalle-p', p.pid]);

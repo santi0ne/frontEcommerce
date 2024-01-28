@@ -24,4 +24,23 @@ export class CarritoComponent {
     this.productoProvider.borrarItem(id);
   }
 
+  updateUnits(operation:string, id:number){
+    const item = this.productoProvider.findItemById(id);
+    if(item){
+      if(operation === 'minus' && item.cantidad > 0){
+        item.cantidad -= 1;
+      }
+      if(operation === 'add'){
+        item.cantidad += 1;
+      }
+      if(item.cantidad === 0){
+        this.deleteItem(id);
+      }
+    }
+  }
+
+  vaciarCarrito(){
+    this.productoProvider.deleteCart();
+  }
+
 }

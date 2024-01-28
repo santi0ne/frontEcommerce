@@ -17,7 +17,6 @@ export class DetalleProductoComponent {
     this.route.params.subscribe((params) => {
       const productId = +params['id'];
 
-      // Llama al servicio para obtener los detalles del producto por ID
       this.productoProvider.getResponse().subscribe((productos: Producto[]) => {
         const productoEncontrado = productos.find((p) => p.pid === productId);
 
@@ -25,13 +24,15 @@ export class DetalleProductoComponent {
           this.producto = productoEncontrado;
         } else {
           console.error('Producto no encontrado');
-          // Aquí puedes redirigir a una página de error o manejarlo de alguna otra manera
           this.router.navigate(['/error']);
         }
       });
     });
   }
 
+  addToCart(p:Producto){
+    this.productoProvider.addProduct(p);
+  }
 
 }
 

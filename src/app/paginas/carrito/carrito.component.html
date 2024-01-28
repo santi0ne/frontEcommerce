@@ -12,15 +12,25 @@
         </div>
         <div class="productCart-buttons">
             <div class="productCart-buttons-operators">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="do_not_disturb_on"></mat-icon>
+                <mat-icon class="icono" aria-hidden="false" aria-label="Example home icon" fontIcon="do_not_disturb_on"
+                    (click)="updateUnits('minus',item.producto.pid)"></mat-icon>
                 <span> {{ item.cantidad }} </span>
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon>
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" (click)="deleteItem(item.producto.pid)"></mat-icon>
+                <mat-icon class="icono" aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"
+                    (click)="updateUnits('add',item.producto.pid)"></mat-icon>
+                <mat-icon class="icono-trash" aria-hidden="false" aria-label="Example home icon" fontIcon="delete"
+                    (click)="deleteItem(item.producto.pid)"></mat-icon>
             </div>
         </div>
     </article>
     <div class="cartTotal">
         <p class="cartTotal-total">Total: $ {{ getTotal() }}</p>
     </div>
-    <button mat-raised-button class="pagar-btn">Pagar</button>
+    <div class="container-buttons">
+        <div>
+            <button mat-raised-button class="vaciar-btn" color="warn" (click)="vaciarCarrito()">Vaciar</button>
+        </div>
+        <div>
+            <button mat-raised-button class="pagar-btn">Pagar</button>
+        </div>
+    </div>
 </div>

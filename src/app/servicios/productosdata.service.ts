@@ -45,5 +45,16 @@ export class ProductosdataService {
     })
     this.myCart.next(this.myList);
   }
+
+  findItemById(id:number){
+    return this.myList.find((item)=>{
+      return item.producto.pid === id;
+    })
+  }
+
+  deleteCart(){
+    this.myList = [];
+    this.myCart.next([...this.myList]);
+  }
   
 }

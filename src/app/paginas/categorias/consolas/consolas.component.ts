@@ -23,7 +23,9 @@ export class ConsolasComponent {
     return this.productodata.filter(producto => producto.categoria === 7);
   }
 
-  agregarAlCarrito(p: Producto): void { }
+  agregarAlCarrito(p: Producto): void {
+    return this.datap.addProduct(p);
+  }
 
   verDetalle(p: Producto): void {
     this.router.navigate(['/detalle-p', p.pid]);

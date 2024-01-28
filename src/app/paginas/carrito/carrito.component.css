@@ -34,6 +34,16 @@
                     border-radius: 0.5rem;
                     padding: 0.5rem;
                 }
+
+                .icono {
+                    cursor: pointer;
+                    color: #FF4081;
+                }
+
+                .icono-trash {
+                    cursor: pointer;
+                    color: #3F51B5;
+                }
             }
         }
 
@@ -54,10 +64,22 @@
         }
     }
 
-    .pagar-btn {
-        width: 50%;
-        align-self: center;
-        background-color: #28a745;
-        color: white
+    .container-buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        .pagar-btn {
+            width: 50%;
+            background-color: #28a745;
+            color: white
+        }
+    
+        .vaciar-btn {
+            width: 50%;
+        }
     }
+
+    
 }

@@ -21,4 +21,9 @@ h1 {
 .buttoms {
     display: flex;
     justify-content: space-between;
+
+    .add-carrito {
+        background-color: #28a745;
+        color: white
+    }
 }

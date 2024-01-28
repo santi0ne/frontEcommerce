@@ -18,6 +18,9 @@
           <p>{{ producto.descripcion }}</p>
           <div class="buttoms">
             <div>
+              <button mat-raised-button class="add-carrito" (click)="addToCart(producto)">Añadir a carrito</button>
+            </div>
+            <div>
               <button mat-raised-button color="primary">Editar Producto</button>
             </div>
             <div>
