@@ -28,6 +28,7 @@ import { PerifericosComponent } from './paginas/categorias/perifericos/periferic
 import { ConsolasComponent } from './paginas/categorias/consolas/consolas.component';
 import { TelevisoresComponent } from './paginas/categorias/televisores/televisores.component';
 import { DetalleProductoComponent } from './paginas/detalle-producto/detalle-producto.component';
+import { CarritoComponent } from './paginas/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DetalleProductoComponent } from './paginas/detalle-producto/detalle-pro
     PerifericosComponent,
     ConsolasComponent,
     TelevisoresComponent,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

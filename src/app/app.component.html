@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <div>
-    <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+    <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
@@ -8,16 +8,24 @@
     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="mouse"></mat-icon>
     <span>ELECTRO - 19</span>
   </div>
-  <div>
-    <button mat-raised-button color="accent"><mat-icon aria-hidden="false" aria-label="Example home icon"
-        fontIcon="shopping_cart"></mat-icon>Carrito</button>
+  <div class="navbar-cart">
+    <div class="navbar-cart-items">
+      <p>0</p>
+    </div>
+    <button mat-raised-button color="accent" (click)="onToggleCarrito()"><mat-icon aria-hidden="false"
+        aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>Carrito</button>
   </div>
 </mat-toolbar>
-<mat-drawer-container class="container">
-  <mat-drawer #drawer mode="side" opened>
-    <app-menu></app-menu>
-  </mat-drawer>
-  <mat-drawer-content>
+<div class="cart" [ngClass]="{show:viewCarrito}">
+  <app-carrito></app-carrito>
+</div>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened="true">
+    <ng-container *ngIf="sidenav.opened">
+      <app-menu></app-menu>
+    </ng-container>
+  </mat-sidenav>
+  <mat-sidenav-content>
     <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>
