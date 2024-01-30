@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
 import { ProductosdataService } from '../../servicios/productosdata.service'
+import { PagoService } from '../../servicios/pago.service';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
@@ -10,7 +13,7 @@ import { ProductosdataService } from '../../servicios/productosdata.service'
 export class CarritoComponent {
   myCart$ = this.productoProvider.myCart$;
 
-  constructor(private productoProvider: ProductosdataService){}
+  constructor(private productoProvider: ProductosdataService,private pagoService: PagoService,private router: Router){}
 
   getTotal(): number {
     let total = 0;
@@ -43,4 +46,14 @@ export class CarritoComponent {
     this.productoProvider.deleteCart();
   }
 
+  Pagar(){
+    this.myCart$.subscribe(carrito => {
+      this.pagoService.setCarrito(carrito);
+      
+      this.pagoService.pagar();
+      console.log(carrito);
+    });
+    this.router.navigate(['/factura']);
+
+  }
 }
