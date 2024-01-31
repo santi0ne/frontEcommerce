@@ -63,7 +63,7 @@ export class FacturaComponent {
     }, 3000);
     this.cleanData();
     setTimeout(() => {
-      this.correo.enviarCorreo('jjmg039@hotmail.com', 'Confirmacion del pedido', 'Tu pedido ha sido confirmado').subscribe({
+      this.correo.enviarCorreo(this.correoUsuario, 'Confirmacion del pedido', 'Tu pedido ha sido confirmado').subscribe({
         next: () => console.log('Correo enviado con éxito'),
         error: (error) => {
           console.error('Error al enviar el correo', error);
