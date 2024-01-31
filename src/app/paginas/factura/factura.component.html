@@ -1,16 +1,36 @@
 <div class="container-fluid">
-    <mat-card class="card">
-        <mat-card-content>
-            <h1>Factura</h1>
-        </mat-card-content>
-    </mat-card>
 
-    <mat-card class="card">
-        <mat-card-content>
-            <p>Aqui iria la tabla</p>
-        </mat-card-content>
-    </mat-card>
-
+<mat-card class="card">
+    <mat-card-content class="cartTable">
+      <h1>Factura</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of carritoElementos">
+            <td>
+              <img [src]="item.producto.imagen" alt="{{ item.producto.nombre }}" class="imagen-producto">
+              {{ item.producto.nombre }}
+            </td>
+            <td>$ {{ item.producto.precio }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>$ {{ item.producto.precio * item.cantidad }}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <div class="cartTotal">
+        <p class="cartTotal-total">Total: $ {{ getTotal() }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -20,27 +40,27 @@
                         <form class="example-form">
                             <mat-form-field>
                                 <mat-label>Nombre</mat-label>
-                                <input matInput placeholder="Ex. Santiago">
+                                <input matInput placeholder="Ex. Santiago" [(ngModel)]="nombreUsuario" name="nombreUsuario">
                             </mat-form-field>
                             <br>
                             <mat-form-field>
                                 <mat-label>Apellido</mat-label>
-                                <input matInput placeholder="Ex. Coronel">
+                                <input matInput placeholder="Ex. Coronel" [(ngModel)]="apellidoUsuario" name="apellidoUsuario">
                             </mat-form-field>
                             <br>
                             <mat-form-field>
                                 <mat-label>Correo</mat-label>
-                                <input matInput placeholder="Ex. abc@email.com">
+                                <input matInput placeholder="Ex. abc@email.com" [(ngModel)]="correoUsuario" name="correoUsuario">
                             </mat-form-field>
                             <br>
                             <mat-form-field>
                                 <mat-label>Cédula de identidad</mat-label>
-                                <input matInput placeholder="Ex. 0956682615">
+                                <input matInput placeholder="Ex. 0956682615" [(ngModel)]="cedulaUsuario" name="cedulaUsuario">
                             </mat-form-field>
                             <br>
                             <mat-form-field>
                                 <mat-label>Télefono</mat-label>
-                                <input matInput placeholder="Ex. 0994552134">
+                                <input matInput placeholder="Ex. 0994552134" [(ngModel)]="telefonoUsuario" name="telefonoUsuario">
                             </mat-form-field>
                         </form>
                     </mat-card-content>
@@ -53,17 +73,17 @@
                         <form class="example-form">
                             <mat-form-field>
                                 <mat-label>Provincia</mat-label>
-                                <input matInput placeholder="Ex. Guayas">
+                                <input matInput placeholder="Ex. Guayas" [(ngModel)]="provincia" name="provincia">
                             </mat-form-field>
                             <br>
                             <mat-form-field>
                                 <mat-label>Ciudad</mat-label>
-                                <input matInput placeholder="Ex. Guayaquil">
+                                <input matInput placeholder="Ex. Guayaquil" [(ngModel)]="ciudad" name="ciudad">
                             </mat-form-field>
                             <br>
                             <mat-form-field>
                                 <mat-label>Sector</mat-label>
-                                <input matInput placeholder="Ex. Norte">
+                                <input matInput placeholder="Ex. Norte" [(ngModel)]="sector" name="sector">
                             </mat-form-field>
                             <br>
 
@@ -71,13 +91,13 @@
                                 <div class="col-md-6">
                                     <mat-form-field>
                                         <mat-label>Calle Principal</mat-label>
-                                        <input matInput placeholder="Ex. Av. Isidro Ayora">
+                                        <input matInput placeholder="Ex. Av. Isidro Ayora" [(ngModel)]="calleP" name="calleP"/>
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
                                     <mat-form-field>
                                         <mat-label>Calle Secundaria</mat-label>
-                                        <input matInput placeholder="Ex. 7mo Callejón">
+                                        <input matInput placeholder="Ex. 7mo Callejón" [(ngModel)]="calleS" name="calleS"/>
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -85,13 +105,13 @@
                                 <div class="col-md-6">
                                     <mat-form-field>
                                         <mat-label>Villa</mat-label>
-                                        <input matInput placeholder="Ex. V21">
+                                        <input matInput placeholder="Ex. V21" [(ngModel)]="villa" name="villa"/>
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
                                     <mat-form-field>
                                         <mat-label>Código Postal</mat-label>
-                                        <input matInput placeholder="Ex. 92564">
+                                        <input matInput placeholder="Ex. 92564" [(ngModel)]="codigoPostal" name="codigoPostal"/>
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -105,8 +125,25 @@
     <mat-card class="card">
         <mat-card-content>
             <h1>Pago</h1>
-            <button mat-raised-button class="vaciar-btn" color="warn" (click)="elementos()">Vaciar</button>
+            <div class="form-container">
 
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Número de tarjeta" [(ngModel)]="numeroTarjeta" maxlength="16" />
+            </mat-form-field>
+        
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Fecha de vencimiento (MM/YY)" [(ngModel)]="fechaVencimiento" maxlength="5" />
+            </mat-form-field>
+        
+            <mat-form-field class="form-field">
+                <input matInput placeholder="CVV" [(ngModel)]="cvv" maxlength="3" />
+            </mat-form-field>
+        
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Nombre del titular" [(ngModel)]="nombreTitular" />
+            </mat-form-field>
+            </div>
+            <button mat-raised-button class="vaciar-btn" color="warn" (click)="pay()">Pagar</button>
         </mat-card-content>
     </mat-card>
 </div>

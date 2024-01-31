@@ -29,6 +29,10 @@ import { ConsolasComponent } from './paginas/categorias/consolas/consolas.compon
 import { TelevisoresComponent } from './paginas/categorias/televisores/televisores.component';
 import { DetalleProductoComponent } from './paginas/detalle-producto/detalle-producto.component';
 import { CarritoComponent } from './paginas/carrito/carrito.component';
+import { FormsModule } from '@angular/forms';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +64,10 @@ import { CarritoComponent } from './paginas/carrito/carrito.component';
     MatListModule,
     MatExpansionModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    MatGridListModule,
+    MatSnackBarModule
   ],
   providers: [
     provideClientHydration(),
