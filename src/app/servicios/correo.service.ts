@@ -12,9 +12,11 @@ export class CorreoService {
 
   enviarCorreo(destinatario: string, asunto: string, mensaje: string): Observable<any> {
     const correoData = {
-      destinatario: destinatario,
-      asunto: asunto,
-      mensaje: mensaje,
+      correo: {
+        destinatario: destinatario,
+        asunto: asunto,
+        mensaje: mensaje,
+      }
     };
 
     return this.http.post(`${this.URL}/enviar-correo`, correoData);
