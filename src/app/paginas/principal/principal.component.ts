@@ -29,4 +29,5 @@ export class PrincipalComponent {
   verDetalle(p: Producto): void {
     this.router.navigate(['/detalle-p', p.pid]); // Ajusta la ruta y los parámetros según tu necesidad
   }
+
 }

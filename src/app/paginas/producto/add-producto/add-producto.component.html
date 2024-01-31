@@ -1,0 +1,21 @@
+<!-- add-producto.component.html -->
+
+<form [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
+    <label for="categoria">Categoría:</label>
+    <input type="text" id="categoria" formControlName="categoria">
+  
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre">
+  
+    <label for="descripcion">Descripción:</label>
+    <input type="text" id="descripcion" formControlName="descripcion">
+  
+    <label for="precio">Precio:</label>
+    <input type="text" id="precio" formControlName="precio">
+  
+    <label for="imagen">Imagen:</label>
+    <input type="text" id="imagen" formControlName="imagen">
+  
+    <button type="submit">Agregar Producto</button>
+  </form>
+  

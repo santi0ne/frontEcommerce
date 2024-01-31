@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +35,7 @@ import { CarritoComponent } from './paginas/carrito/carrito.component';
 import { FormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AddProductoComponent } from './paginas/producto/add-producto/add-producto.component';
 
 
 @NgModule({
@@ -50,7 +54,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ConsolasComponent,
     TelevisoresComponent,
     DetalleProductoComponent,
-    CarritoComponent
+    CarritoComponent,
+    AddProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatInputModule,
     FormsModule,
     MatGridListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    CommonModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration(),

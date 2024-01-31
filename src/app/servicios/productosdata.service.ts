@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Producto } from './../interfaces/producto';
 import { Detalle } from './../interfaces/detalle';
@@ -12,6 +12,14 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class ProductosdataService {
   private URL: string = 'http://localhost:3000/productos';
 
+  /*
+  // lista de producto
+  private productos: Producto[] = []
+
+  // producto observable
+  private productosSubject = new BehaviorSubject<Producto[]>(this.productos);
+  productos$ = this.productosSubject.asObservable();
+*/
   // lista carrito
   private myList: Detalle[] = [];
 
@@ -55,6 +63,11 @@ export class ProductosdataService {
   deleteCart(){
     this.myList = [];
     this.myCart.next([...this.myList]);
+  }
+
+  agregarProducto(producto: Producto): Observable<Producto> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<Producto>(this.URL, producto, { headers });
   }
   
 }

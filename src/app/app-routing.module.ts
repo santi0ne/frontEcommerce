@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// PAGINAS
 import { PrincipalComponent } from './paginas/principal/principal.component';
+import { FacturaComponent } from './paginas/factura/factura.component';
+import { AcercadeComponent } from './paginas/acercade/acercade.component';
 
 // CATEGORIAS
 import { ComputadoraComponent } from './paginas/categorias/computadora/computadora.component';
@@ -13,14 +16,14 @@ import { PerifericosComponent } from './paginas/categorias/perifericos/periferic
 import { ConsolasComponent } from './paginas/categorias/consolas/consolas.component';
 import { TelevisoresComponent } from './paginas/categorias/televisores/televisores.component';
 
-import { FacturaComponent } from './paginas/factura/factura.component';
-import { AcercadeComponent } from './paginas/acercade/acercade.component';
-
+// PRODUCTOS 
 import { DetalleProductoComponent } from './paginas/detalle-producto/detalle-producto.component'
-
+import { AddProductoComponent } from './paginas/producto/add-producto/add-producto.component';
 
 const routes: Routes = [
   { path: "principal", component: PrincipalComponent },
+  { path: "factura", component: FacturaComponent},
+  { path: "acercade", component: AcercadeComponent},
 
   // CATEGORIAS
   { path: "computadoras", component: ComputadoraComponent},
@@ -32,9 +35,8 @@ const routes: Routes = [
   { path: "consolas", component: ConsolasComponent},
   { path: "televisores", component: TelevisoresComponent},
 
-
-  { path: "factura", component: FacturaComponent},
-  { path: "acercade", component: AcercadeComponent},
+  // PRODUCTOS
+  { path: 'add-p', component: AddProductoComponent},
 
   { path: 'detalle-p/:id', component: DetalleProductoComponent },
 

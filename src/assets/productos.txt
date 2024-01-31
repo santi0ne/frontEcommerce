@@ -1,0 +1,2 @@
+categoria,nombre,descripcion,precio,imagen
+2,Tecno Camon 20 Pro 8+256GB,Pantalla AMOLED de 6,67″, resolución 1080 x 2400 pixeles.Procesador: MediaTek Helio G99 Octa-Core.Sistema operativo: Android 13.RAM 8 GB, expandible a 16 GB.Almacenamiento 256 GB.Cámara trasera: 64 MP + 2 MP + IA.Cámara frontal: 32 MP.,205.45,https://i.ibb.co/bbSwpVT/camon.png
