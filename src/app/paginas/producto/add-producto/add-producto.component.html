@@ -1,21 +1,58 @@
-<!-- add-producto.component.html -->
+<mat-card class="card">
+    <mat-card-content>
+        <h1>Añadir Producto</h1>
+    </mat-card-content>
+</mat-card>
 
-<form [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
-    <label for="categoria">Categoría:</label>
-    <input type="text" id="categoria" formControlName="categoria">
-  
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" formControlName="nombre">
-  
-    <label for="descripcion">Descripción:</label>
-    <input type="text" id="descripcion" formControlName="descripcion">
-  
-    <label for="precio">Precio:</label>
-    <input type="text" id="precio" formControlName="precio">
-  
-    <label for="imagen">Imagen:</label>
-    <input type="text" id="imagen" formControlName="imagen">
-  
-    <button type="submit">Agregar Producto</button>
-  </form>
-  
+<mat-card class="card">
+    <mat-card-content>
+        <h2>Llena los campos con los datos del producto a añadir</h2>
+        <p>Para la Categoría del producto a añadir considera lo siguiente:</p>
+        <div class="lCategorias">
+            <p>Para Computadoras de mesa ingresa '1'.</p>
+            <p>Para Celulares ingresa '2'.</p>
+            <p>Para Tablets ingresa '3'.</p>
+            <p>Para Audio y Video ingresa '4'.</p>
+            <p>Para Laptops ingresa '5'.</p>
+            <p>Para Periféricos y Dispositivos ingresa '6'.</p>
+            <p>Para Consolas ingresa '7'.</p>
+            <p>Para Televisores ingresa '8'.</p>
+        </div>
+
+        <br>
+        <form [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
+
+            <div class="input-1">
+                <mat-form-field>
+                    <input matInput formControlName="categoria" placeholder="Categoría">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput formControlName="nombre" placeholder="Nombre">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput formControlName="descripcion" placeholder="Descripción">
+                </mat-form-field>
+            </div>
+
+            <div class="input-2">
+                <mat-form-field>
+                    <input matInput formControlName="precio" placeholder="Precio">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput formControlName="imagen" placeholder="Imagen">
+                </mat-form-field>
+
+            </div>
+
+            <div class="boton">
+                <button mat-raised-button color="primary" type="submit">Agregar Producto</button>
+            </div>
+
+        </form>
+
+    </mat-card-content>
+
+</mat-card>

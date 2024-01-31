@@ -1,0 +1,30 @@
+h1,
+h2 {
+    color: #3F51B5;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.lCategorias {
+    text-align: center;
+    font-style: italic;
+}
+
+.input-1,
+.input-2 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton {
+    text-align: center;
+}

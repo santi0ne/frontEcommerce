@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Producto } from '../../../interfaces/producto'; // Ajusta la ruta según tu estructura
 import { ProductosdataService } from '../../../servicios/productosdata.service'
+
+import { MatSnackBar,MatSnackBarRef } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-producto',
@@ -18,7 +19,7 @@ export class AddProductoComponent implements OnInit{
     imagen: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private productoProvider: ProductosdataService) {}
+  constructor(private fb: FormBuilder, private productoProvider: ProductosdataService, private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.productoForm = this.fb.group({
@@ -30,25 +31,32 @@ export class AddProductoComponent implements OnInit{
     });
   }
 
-  /*
-  agregarProducto(): void {
-    const nuevoProducto: Producto = this.productoForm.value;
-    // console.log('Nuevo Producto:', nuevoProducto);
-    this.productoProvider.agregarProducto(nuevoProducto);
-    this.productoForm.reset();
-  }*/
+  private mostrarMensajeFeedback(mensaje: string): MatSnackBarRef<any> {
+    return this.snackBar.open(mensaje, 'Cerrar', {
+      duration: 3000,
+    });
+  }
 
   agregarProducto(): void {
     const nuevoProducto = this.productoForm.value;
     this.productoProvider.agregarProducto(nuevoProducto).subscribe(
       (respuesta) => {
         console.log('Producto agregado con éxito:', respuesta);
-        // Realiza otras acciones después de agregar el producto, si es necesario
+        const snackBarRef: MatSnackBarRef<any> = this.mostrarMensajeFeedback('Producto agregado con éxito!');
+        setTimeout(() => {
+          snackBarRef.dismiss();
+        }, 3000);
+        this.productoForm.reset();
       },
       (error) => {
         console.error('Error al agregar el producto:', error);
-        // Maneja el error según tus necesidades
+        const snackBarRef: MatSnackBarRef<any> = this.mostrarMensajeFeedback('Error al agregar producto!');
+        setTimeout(() => {
+          snackBarRef.dismiss();
+        }, 3000);
       }
     );
   }
+
+
 }

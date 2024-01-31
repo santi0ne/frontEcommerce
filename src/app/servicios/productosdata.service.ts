@@ -65,9 +65,16 @@ export class ProductosdataService {
     this.myCart.next([...this.myList]);
   }
 
+  // OPERACIONES CON PRODUCTOS
+
   agregarProducto(producto: Producto): Observable<Producto> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<Producto>(this.URL, producto, { headers });
+  }
+
+  eliminarProducto(id: number): Observable<any> {
+    const url = `${this.URL}/${id}`;
+    return this.http.delete(url);
   }
   
 }
