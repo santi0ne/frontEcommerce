@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 import { PagoService } from '../../servicios/pago.service';
 import { MatSnackBar,MatSnackBarRef } from '@angular/material/snack-bar';
 
+import { CorreoService } from '../../servicios/correo.service';
 
 @Component({
   selector: 'app-factura',
@@ -36,7 +37,8 @@ export class FacturaComponent {
   codigoPostal: string = '';
 
 
-  constructor(private detalleProvider: DetalleDataService,private pagoService: PagoService,private snackBar: MatSnackBar){}
+  constructor(private detalleProvider: DetalleDataService,
+    private pagoService: PagoService,private snackBar: MatSnackBar,private correo:CorreoService){}
 
   ngOnInit() {
     this.detalleProvider.getResponse().subscribe((response) => {
@@ -60,6 +62,19 @@ export class FacturaComponent {
       snackBarRef.dismiss();
     }, 3000);
     this.cleanData();
+    setTimeout(() => {
+      this.correo.enviarCorreo('jjmg039@hotmail.com', 'Confirmacion del pedido', 'Tu pedido ha sido confirmado').subscribe({
+        next: () => console.log('Correo enviado con éxito'),
+        error: (error) => {
+          console.error('Error al enviar el correo', error);
+          // Imprimir detalles adicionales del error si están disponibles
+          if (error && error.error) {
+            console.error('Detalles del error:', error.error);
+          }
+        },
+      });
+    }, 3000);
+    
   }
 
   private mostrarMensajeFeedback(mensaje: string): MatSnackBarRef<any> {
